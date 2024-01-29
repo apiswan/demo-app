@@ -18,9 +18,10 @@ func main() {
 
 	var chat = map[string]interface{}{
 		"data": map[string]interface{}{
-			"username":  "luffy",
-			"message":   "what's up guys!",
-			"timestamp": "532356",
+			"username":     "luffy",
+			"message":      "what's up guys!",
+			"id":           53443,
+			"read-receipt": true,
 		},
 	}
 
