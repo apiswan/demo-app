@@ -27,6 +27,15 @@ func main() {
 
 	// Handle GET request
 	r.GET("/chat-services/user/chat", func(c *gin.Context) {
+		c.Header("Access-Control-Allow-Origin", "*")
+		c.Header("Access-Control-Allow-Methods", "DELETE, POST, GET, OPTIONS")
+		c.Header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With")
+	
+		// Check if the request method is OPTIONS (preflight request)
+		if c.Request.Method == "OPTIONS" {
+			c.Status(http.StatusOK)
+			return
+		}
 		c.JSON(http.StatusOK, chat)
 	})
 
